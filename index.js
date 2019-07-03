@@ -2,12 +2,12 @@ const http = require('http');
 const port = 3000;
 const fs = require('fs');
 
+fs.writeFileSync('hello-world.txt', 'Hello to this great world', 'utf8');
+
 // Handles HTTP requests.
 const requestHandler = (request, response) => {
   response.end(`Handling a request on port ${port}`)
 };
-
-fs.writeFileSync('hello-world.txt', 'Hello to this great world', 'utf8');
 
 // Create a server and pass in the  requestHandler function
 const server = http.createServer(requestHandler);
